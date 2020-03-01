@@ -22,7 +22,7 @@ args = {
     'cache_dir': 'cache/',
     'do_train': True,
     'do_eval': True,
-    'fp16': True,
+    'fp16': False,
     'fp16_opt_level': 'O1',
     'max_seq_length': 256,
     'output_mode': 'classification',
@@ -46,6 +46,36 @@ args = {
     'reprocess_input_data': True,
     'notes': 'Using train.csv'
 }
+
+import json
+import torch
+from torch.utils.data import (DataLoader, RandomSampler, SequentialSampler, TensorDataset)
+import random
+from torch.utils.data.distributed import DistributedSampler
+from tqdm import tqdm_notebook, trange
+
+from pytorch_transformers import (WEIGHTS_NAME, BertConfig, BertForSequenceClassification, BertTokenizer,
+                                  XLMConfig, XLMForSequenceClassification, XLMTokenizer,
+                                  XLNetConfig, XLNetForSequenceClassification, XLNetTokenizer,
+                                  RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer)
+
+from pytorch_transformers import AdamW, WarmupLinearSchedule
+from tensorboardX import SummaryWriter
+from utils import (convert_examples_to_features,output_modes, processors)
+from sklearn.metrics import mean_squared_error, matthews_corrcoef, confusion_matrix
+from scipy.stats import pearsonr
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+with open('args.json', 'w') as f:
+    json.dump(args, f)
+if os.path.exists(args['output_dir']) and os.listdir(args['output_dir']) and args['do_train'] and not args['overwrite_output_dir']:
+    raise ValueError("Output directory ({}) already exists and is not empty. Use --overwrite_output_dir to overcome.".format(args['output_dir']))
+
+
+print(device)
+print(os.cpu_count()-2)
+
 
 def load_and_cache_examples(task, tokenizer, dataset=True, evaluate=True):
     processor = processors[task]()
@@ -310,23 +340,6 @@ def main():
     import random
     import json
 
-    import torch
-    from torch.utils.data import (DataLoader, RandomSampler, SequentialSampler, TensorDataset)
-    import random
-    from torch.utils.data.distributed import DistributedSampler
-    from tqdm import tqdm_notebook, trange
-
-    from pytorch_transformers import (WEIGHTS_NAME, BertConfig, BertForSequenceClassification, BertTokenizer,
-                                      XLMConfig, XLMForSequenceClassification, XLMTokenizer,
-                                      XLNetConfig, XLNetForSequenceClassification, XLNetTokenizer,
-                                      RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer)
-
-    from pytorch_transformers import AdamW, WarmupLinearSchedule
-    from tensorboardX import SummaryWriter
-    from utils import (convert_examples_to_features,output_modes, processors)
-    from sklearn.metrics import mean_squared_error, matthews_corrcoef, confusion_matrix
-    from scipy.stats import pearsonr
-
     import pandas as pd
     import numpy as np
 
@@ -377,18 +390,6 @@ def main():
     test_df.to_csv(prefix+'test.tsv', sep='\t', index=False, header=False)
     dev_df.to_csv(prefix + 'dev.tsv', sep='\t', index=False, header=False)
 
-
-
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    with open('args.json', 'w') as f:
-        json.dump(args, f)
-    if os.path.exists(args['output_dir']) and os.listdir(args['output_dir']) and args['do_train'] and not args['overwrite_output_dir']:
-        raise ValueError("Output directory ({}) already exists and is not empty. Use --overwrite_output_dir to overcome.".format(args['output_dir']))
-
-
-    print(device)
-    print(os.cpu_count()-2)
 
     """LOAD PRE-TRAINED MODEL"""
 
