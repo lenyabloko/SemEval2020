@@ -12,15 +12,14 @@ sudo apt install python3-pip
 
 ```
 
-After Cuda installed you should execute the setup.sh and create custom directories for input and output files
+After Cuda installed you should execute the setup.sh with will install all required packages
 
 ```
 $ sudo sh ./setup.sh
-$ sudo mkdir outputs
-$ sudo mkdir content
 
 ```
-Then, you must create custom directories for input and output files and place your train.csv and test.csv into the ./outputs 
+
+Then, you must create custom directories for input and output files and place your train.csv and test.csv into the ./content 
 
 ```
 $ sudo mkdir outputs
