@@ -1,4 +1,4 @@
-# Provided free by ![Yabloko Lab US](http:yabloko.us), where ![The fruit of Knowledge](https://github.com/lenyabloko/lenyabloko.github.io/blob/master/favicon.ico) is sweet!
+# ![Yabloko Lab US](http:yabloko.us), where ![The fruit of Knowledge](https://github.com/lenyabloko/lenyabloko.github.io/blob/master/favicon.ico) is sweet!
 Code for SemEval2020 conference paper
 
 This code was tested on Google Cloud Compute Engine N1 high memory (26G) instance of Linux Ubuntu 18.04 with added GPU Tesla V100 running Cuda (for help on adding GPU to your Cloud instance see this SO question: https://stackoverflow.com/questions/53415180/gcp-error-quota-gpus-all-regions-exceeded-limit-0-0-globally)
