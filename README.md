@@ -1,5 +1,5 @@
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lenyabloko/SemEval2020/blob/master/SemEval2020_Task5_Subtask_2.ipynb)
 
 This code was tested on Google Cloud Compute Engine N1 high memory (26G) instance of Linux Ubuntu 18.04 with added GPU Tesla V100 running Cuda (for help on adding GPU to your Cloud instance see this SO question: https://stackoverflow.com/questions/53415180/gcp-error-quota-gpus-all-regions-exceeded-limit-0-0-globally)
 
