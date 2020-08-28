@@ -1,6 +1,8 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lenyabloko/SemEval2020/blob/master/SemEval2020_Task5_Subtask_2.ipynb)
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ethan-at-semeval-2020-task-5-modelling-causal/counterfactual-detection-on-semeval-2020-2)](https://paperswithcode.com/sota/counterfactual-detection-on-semeval-2020-2?p=ethan-at-semeval-2020-task-5-modelling-causal)
+
 This code was tested on Google Cloud Compute Engine N1 high memory (26G) instance of Linux Ubuntu 18.04 with added GPU Tesla V100 running Cuda (for help on adding GPU to your Cloud instance see this SO question: https://stackoverflow.com/questions/53415180/gcp-error-quota-gpus-all-regions-exceeded-limit-0-0-globally)
 
 To run test code you will need to install some basic software like Pip3 (https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/) and Cuda (https://gist.github.com/ingo-m/60a21120f3a9e4d7dd1a36307f3a8cce):
