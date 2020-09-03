@@ -65,5 +65,12 @@ INFO:pytorch_transformers.modeling_utils:Model config {
 
 ```
 
+When citing ETHAN in academic papers and theses, please use this BibTeX entry:
+
+
+Len Yabloko. 2020. ETHAN at semeval-2020 task 5: Modelling causal reasoning in language using neuro-
+symbolic cloud computing. In Proceedings of the 14th International Workshop on Semantic Evaluation
+(SemEval-2020), Barcelona, Spain.
+
 
 
