@@ -1,5 +1,7 @@
-# Provided free by ![Yabloko Lab US](http:yabloko.us), where ![The fruit of Knowledge](https://github.com/lenyabloko/lenyabloko.github.io/blob/master/favicon.ico) is sweet!
-Code for SemEval2020 conference paper
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lenyabloko/SemEval2020/blob/master/SemEval2020_Task5_Subtask_2.ipynb)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ethan-at-semeval-2020-task-5-modelling-causal/counterfactual-detection-on-semeval-2020-2)](https://paperswithcode.com/sota/counterfactual-detection-on-semeval-2020-2?p=ethan-at-semeval-2020-task-5-modelling-causal)
 
 This code was tested on Google Cloud Compute Engine N1 high memory (26G) instance of Linux Ubuntu 18.04 with added GPU Tesla V100 running Cuda (for help on adding GPU to your Cloud instance see this SO question: https://stackoverflow.com/questions/53415180/gcp-error-quota-gpus-all-regions-exceeded-limit-0-0-globally)
 
@@ -30,7 +32,7 @@ $ sudo cp test.csv /content
 
 ```
 
-Finally, you can run the semeval.py from the above repository (you should see the following in the console):
+Finally, you can run the semeval.py (you should see the following in the console):
 
 ```
 $ python3 semeval.py
@@ -62,6 +64,13 @@ INFO:pytorch_transformers.modeling_utils:Model config {
 }
 
 ```
+
+When citing ETHAN in academic papers and theses, please use this BibTeX entry:
+
+
+Len Yabloko. 2020. ETHAN at semeval-2020 task 5: Modelling causal reasoning in language using neuro-
+symbolic cloud computing. In Proceedings of the 14th International Workshop on Semantic Evaluation
+(SemEval-2020), Barcelona, Spain.
 
 
 
