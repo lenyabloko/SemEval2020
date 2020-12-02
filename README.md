@@ -68,9 +68,17 @@ INFO:pytorch_transformers.modeling_utils:Model config {
 When citing ETHAN in academic papers and theses, please use this BibTeX entry:
 
 
-Len Yabloko. 2020. ETHAN at semeval-2020 task 5: Modelling causal reasoning in language using neuro-
-symbolic cloud computing. In Proceedings of the 14th International Workshop on Semantic Evaluation
-(SemEval-2020), Barcelona, Spain.
-
+@inproceedings{yabloko-2020-ethan,
+    title = "{ETHAN} at {S}em{E}val-2020 Task 5: Modelling Causal Reasoning in Language Using Neuro-symbolic Cloud Computing",
+    author = "Yabloko, Len",
+    booktitle = "Proceedings of the Fourteenth Workshop on Semantic Evaluation",
+    month = dec,
+    year = "2020",
+    address = "Barcelona (online)",
+    publisher = "International Committee for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.semeval-1.83",
+    pages = "645--652",
+    abstract = "I present ETHAN: Experimental Testing of Hybrid AI Node implemented entirely on free cloud computing infrastructure. The ultimate goal of this research is to create modular reusable hybrid neuro-symbolic architecture for Artificial Intelligence. As a test case I model natural language comprehension of causal relations from open domain text corpus that combines semi-supervised language model (Huggingface Transformers) with constituency and dependency parsers (Allen Institute for Artificial Intelligence.)",
+}
 
 
