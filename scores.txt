@@ -1,4 +1,4 @@
-f1:0.698
-recall:0.767
-precision:0.676
-exact_match:0.0713
+f1:0.708
+recall:0.772
+precision:0.691
+exact_match:0.0595
